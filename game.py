@@ -1,15 +1,15 @@
 import pygame
 from sys import exit
-import random  # Import to randomize snail and fly reappearance
+import random  
 
 # Initialize Pygame
 pygame.init()
 screen = pygame.display.set_mode((800, 400))
-pygame.display.set_caption('RUNNERS')
+pygame.display.set_caption('Flag Runner')
 clock = pygame.time.Clock()
 tFont = pygame.font.Font('font/Pixeltype.ttf', 50)
 
-# Load player assets
+# player assets
 player_walk_right = pygame.image.load('graphics/player/player_walk_1.png').convert_alpha()
 player_jump_right = pygame.image.load('graphics/player/jump.png').convert_alpha()
 player_walk_left = pygame.transform.flip(player_walk_right, True, False)
@@ -17,7 +17,7 @@ player_jump_left = pygame.transform.flip(player_jump_right, True, False)
 player_surf = player_walk_right
 player_rect = player_surf.get_rect(topleft=(80, 300))
 
-# Load other assets
+# other assets
 sky_surface = pygame.image.load('graphics/bgwar.png').convert()
 sky_surface = pygame.transform.scale(sky_surface, (800, 400))
 ground_surface = pygame.image.load('graphics/ground.png').convert()
@@ -52,9 +52,9 @@ player_direction = "right"
 
 # Game state variables
 game_active = True
-score = 0  # Initialize the score
+score = 0  
 innitScoreTime = 0
-score_stack = []  # Stack to store scores
+score_stack = [] 
 
 # Spawn delay variables
 snail_spawn_delay = random.randint(30, 60)  # Faster respawn (frames)
@@ -94,8 +94,8 @@ def display_game_over():
         screen.blit(high_score_text, high_score_rect)
 
 # Torpedo cooldown
-torpedo_cooldown = 3000  # 5 seconds in milliseconds
-last_torpedo_time = 0
+torpedo_cooldown = 3500  # 5 seconds in milliseconds
+last_torpedo_time = 0 
 
 # Game loop
 while True:
